@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="css/styles.page.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header container">
+      <button class="openbtn" id="openBtn">
+        <img class="openbtn__img" src="img/menu.svg" alt="icon menu" />
+      </button>
+
+      <img src="img/small_brain.svg" alt="small_brain-icon" />
+
+      <span class="site-header__text">тест на определение IQ </span>
+    </header>
+
+    <div class="container-hero">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div id="quiz-container">
+        <div class="quiz" id="question1">
+          <h2>ваш пол:</h2>
+          <label class="label">
+            <input type="radio" name="q1" value="null" />
+            <span class="radio-style"></span>мужчина
+          </label>
+          <label class="label">
+            <input type="radio" name="q1" value="null" />
+            <span class="radio-style"></span> женщина
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(1)">далее</button>
+        </div>
+
+        <div class="quiz" id="question2" style="display: none">
+          <h2>укажите ваш возраст:</h2>
+          <label class="label">
+            <input type="radio" name="q2" value="null" />
+            <span class="radio-style"></span>До 18
+          </label>
+          <label class="label">
+            <input type="radio" name="q2" value="null" />
+            <span class="radio-style"></span>От 18 до 28
+          </label>
+          <label class="label">
+            <input type="radio" name="q2" value="null" />
+            <span class="radio-style"></span>от 29 до 35
+          </label>
+          <label class="label">
+            <input type="radio" name="q2" value="null" />
+            <span class="radio-style"></span> От 36
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(2)">далее</button>
+        </div>
+
+        <div class="quiz" id="question3" style="display: none">
+          <h2>Выберите лишнее:</h2>
+          <label class="label">
+            <input type="radio" name="q3" value="correct" />
+            <span class="radio-style"></span> Дом
+          </label>
+          <label class="label">
+            <input type="radio" name="q3" value="wrong" />
+            <span class="radio-style"></span> Шалаш
+          </label>
+          <label class="label">
+            <input type="radio" name="q3" value="wrong" />
+            <span class="radio-style"></span> Бунгало
+          </label>
+          <label class="label">
+            <input type="radio" name="q3" value="wrong" />
+            <span class="radio-style"></span> Скамейка
+          </label>
+          <label class="label">
+            <input type="radio" name="q3" value="wrong" />
+            <span class="radio-style"></span> Хижина
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(3)">далее</button>
+        </div>
+
+        <div class="quiz" id="question4" style="display: none">
+          <h2>
+            Продолжите числовой ряд: <br />
+            18 20 24 32
+          </h2>
+          <label class="label">
+            <input type="radio" name="q4" value="wrong" />
+            <span class="radio-style"></span> 62
+          </label>
+          <label class="label">
+            <input type="radio" name="q4" value="correct" />
+            <span class="radio-style"></span> 48
+          </label>
+          <label class="label">
+            <input type="radio" name="q4" value="wrong" />
+            <span class="radio-style"></span> 74
+          </label>
+          <label class="label">
+            <input type="radio" name="q4" value="wrong" />
+            <span class="radio-style"></span> 57
+          </label>
+          <label class="label">
+            <input type="radio" name="q4" value="wrong" />
+            <span class="radio-style"></span> 60
+          </label>
+          <label class="label">
+            <input type="radio" name="q4" value="wrong" />
+            <span class="radio-style"></span> 77
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(4)">далее</button>
+        </div>
+
+        <div class="quiz colors__wrapper" id="question5" style="display: none">
+          <h2>
+            Выберите цвет, который <br />
+            сейчас наиболее вам <br />
+            приятен:
+          </h2>
+          <div class="colors_wrapper">
+            <label class="label">
+              <input type="radio" name="q5" value="grey" />
+              <span class="radio-style"></span>
+              <img src="img/grey.svg" alt="color-grey" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="blue" />
+              <span class="radio-style"></span>
+              <img src="img/blue.svg" alt="color-blue" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="green" />
+              <span class="radio-style"></span>
+              <img src="img/green.svg" alt="color-green" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="red" />
+              <span class="radio-style"></span>
+              <img src="img/red.svg" alt="color-red" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="yellow" />
+              <span class="radio-style"></span>
+              <img src="img/yellow.svg" alt="color-yellow" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="brown" />
+              <span class="radio-style"></span>
+              <img src="img/brown.svg" alt="color-brown" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="black" />
+              <span class="radio-style"></span>
+              <img src="img/black.svg" alt="color-black" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="pink" />
+              <span class="radio-style"></span>
+              <img src="img/pink.svg" alt="color-pink" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q5" value="light_blue" />
+              <img src="img/light_blue.svg" alt="color-light_blue" />
+            </label>
+          </div>
+          <button class="button-nextt" onclick="nextQuestion(5)">далее</button>
+        </div>
+
+        <div class="quiz colors__wrapper" id="question6" style="display: none">
+          <h2>
+            Отдохните пару секунд, еще <br />раз Выберите цвет, который<br />
+            сейчас наиболее Вам приятен:
+          </h2>
+          <div class="colors_wrapper">
+            <label class="label">
+              <input type="radio" name="q6" value="grey" />
+              <span class="radio-style"></span>
+              <img src="img/grey.svg" alt="color-grey" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="blue" />
+              <span class="radio-style"></span>
+              <img src="img/light_blue.svg" alt="color-blue" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="green" />
+              <span class="radio-style"></span>
+              <img src="img/brown.svg" alt="color-green" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="red" />
+              <span class="radio-style"></span>
+              <img src="img/green.svg" alt="color-red" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="yellow" />
+              <span class="radio-style"></span>
+              <img src="img/black.svg" alt="color-yellow" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="brown" />
+              <span class="radio-style"></span>
+              <img src="img/red.svg" alt="color-brown" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="black" />
+              <span class="radio-style"></span>
+              <img src="img/pink.svg" alt="color-black" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="pink" />
+              <span class="radio-style"></span>
+              <img src="img/yellow.svg" alt="color-pink" />
+            </label>
+            <label class="label">
+              <input type="radio" name="q6" value="light_blue" />
+              <img src="img/blue.svg" alt="color-light_blue" />
+            </label>
+          </div>
+          <button class="button-nextt" onclick="nextQuestion(6)">далее</button>
+        </div>
+
+        <div class="quiz" id="question7" style="display: none">
+          <h2>Какой из городов <br />лишний?</h2>
+          <label class="label">
+            <input type="radio" name="q7" value="wrong" />
+            <span class="radio-style"></span> Вашингтон
+          </label>
+          <label class="label">
+            <input type="radio" name="q7" value="correct" />
+            <span class="radio-style"></span> Лондон
+          </label>
+          <label class="label">
+            <input type="radio" name="q7" value="wrong" />
+            <span class="radio-style"></span> Париж
+          </label>
+          <label class="label">
+            <input type="radio" name="q7" value="wrong" />
+            <span class="radio-style"></span> Нью-Йорк
+          </label>
+          <label class="label">
+            <input type="radio" name="q7" value="wrong" />
+            <span class="radio-style"></span> Москва
+          </label>
+          <label class="label">
+            <input type="radio" name="q7" value="correct" />
+            <span class="radio-style"></span> Оттава
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(7)">далее</button>
+        </div>
+
+        <div class="quiz" id="question8" style="display: none">
+          <h2>Выберите правильную фигуру <br />из четырёх пронумерованных.</h2>
+          <img src="img/image.png" alt="" />
+
+          <div class="label8">
+            <label class="label label__number">
+              <input type="radio" name="q8" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">1</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q8" value="correct" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">2</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q8" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">3</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q8" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">4</p>
+            </label>
+          </div>
+          <button class="button-nextt" onclick="nextQuestion(8)">далее</button>
+        </div>
+
+        <div class="quiz quiz9" id="question9" style="display: none">
+          <h2>Какой из городов <br />лишний?</h2>
+          <label class="label">
+            <input type="radio" name="q9" value="wrong" />
+            <span class="radio-style"></span> Наслаждаться <br />
+            каждой минутой <br />
+            проведенного времени
+          </label>
+          <label class="label">
+            <input type="radio" name="q9" value="correct" />
+            <span class="radio-style"></span> Быть устремленными мыслями в
+            будущее
+          </label>
+          <label class="label">
+            <input type="radio" name="q9" value="wrong" />
+            <span class="radio-style"></span> Учитывать в ежедневной <br />
+            практике прошлый опыт
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(9)">далее</button>
+        </div>
+
+        <div class="quiz" id="question10" style="display: none">
+          <h2>
+            Какое определение, по-Вашему, <br />
+            больше подходит к этому <br />
+            геометрическому изображению:
+          </h2>
+
+          <img
+            class="quiz10__image"
+            src="img/quiz10__image.png"
+            alt="quiz10__image" />
+
+          <label class="label">
+            <input type="radio" name="q10" value="wrong" />
+            <span class="radio-style"></span> Оно остроконечное
+          </label>
+          <label class="label">
+            <input type="radio" name="q10" value="correct" />
+            <span class="radio-style"></span> Оно устойчиво
+          </label>
+          <label class="label">
+            <input type="radio" name="q10" value="wrong" />
+            <span class="radio-style"></span>Оно-находится в состоянии
+            равновесия
+          </label>
+          <button class="button-nextt" onclick="nextQuestion(10)">далее</button>
+        </div>
+
+        <div class="quiz" id="question11" style="display: none">
+          <h2>Выберите правильную фигуру <br />из четырёх пронумерованных.</h2>
+          <img src="img/quiz11__image.png" alt="quiz11__image" />
+
+          <div class="label8">
+            <label class="label label__number">
+              <input type="radio" name="q11" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">34</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q11" value="correct" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">36</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q11" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">53</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q11" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">44</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q11" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">66</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q11" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">42</p>
+            </label>
+          </div>
+          <button class="button-nextt" onclick="nextQuestion(11)">далее</button>
+        </div>
+
+        <div class="quiz" id="question12" style="display: none">
+          <h2>Выберите правильную фигуру <br />из четырёх пронумерованных.</h2>
+          <img src="img/quiz11__image.png" alt="quiz11__image" />
+
+          <div class="label8">
+            <label class="label label__number">
+              <input type="radio" name="q12" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">34</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q12" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">36</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q12" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">53</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q12" value="correct" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">44</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q12" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">66</p>
+            </label>
+            <label class="label label__number">
+              <input type="radio" name="q12" value="wrong" />
+              <span class="visually-hidden radio-style"></span>
+              <p class="label__number">42</p>
+            </label>
+          </div>
+          <button class="button-nextt" onclick="nextQuestion(12)">далее</button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="quiz loadingAnimation"
+      id="loadingAnimation"
+      style="display: none">
+      <h1 class="loadingAnimation__title">обработка результатов</h1>
+
+      <div class="loader">
+        <span class="loader__span" style="--i: 1"></span>
+        <span class="loader__span" style="--i: 2"></span>
+        <span class="loader__span" style="--i: 3"></span>
+        <span class="loader__span" style="--i: 4"></span>
+        <span class="loader__span" style="--i: 5"></span>
+        <span class="loader__span" style="--i: 6"></span>
+        <span class="loader__span" style="--i: 7"></span>
+        <span class="loader__span" style="--i: 8"></span>
+        <span class="loader__span" style="--i: 9"></span>
+        <span class="loader__span" style="--i: 10"></span>
+        <span class="loader__span" style="--i: 11"></span>
+        <span class="loader__span" style="--i: 12"></span>
+        <span class="loader__span" style="--i: 13"></span>
+        <span class="loader__span" style="--i: 14"></span>
+        <span class="loader__span" style="--i: 15"></span>
+        <span class="loader__span" style="--i: 16"></span>
+        <span class="loader__span" style="--i: 17"></span>
+        <span class="loader__span" style="--i: 18"></span>
+        <span class="loader__span" style="--i: 19"></span>
+        <span class="loader__span" style="--i: 20"></span>
+      </div>
+
+      <p>
+        Определение стиля мышления........... ....
+        ...................................................
+      </p>
+    </div>
+
+    <div class="finalMessage" id="finalMessage" style="display: none">
+      <h1>Ваш результат рассчитан:</h1>
+
+      <p class="finalMessage__result">
+        Вы относитесь к 3% респондентов, чей уровень интеллекта более чем на 15
+        пунктов отличается от среднего в большую или меньшую сторону!
+      </p>
+
+      <p class="finalMessage__green-text">
+        Скорее получите свой <br />
+        результат!
+      </p>
+
+      <div class="finalMessage__inner">
+        <p class="finalMessage__inner-info">
+          В целях защиты персональных данных результат теста, их подробная
+          интерпретация и рекомендации доступны в виде голосового сообщения по
+          звонку с вашего мобильного телефона
+        </p>
+      </div>
+
+      <p class="finalMessage__text">Звоните скорее, запись доступна всего</p>
+
+      <span class="finalMessage__timer"
+        ><span id="timer">10:00</span><b>МИНУТ</b></span
+      >
+
+      <div class="finalMessage__call-wrapper">
+        <p class="finalMessage__call-text">
+          позвонить и прослушать <br />результат
+        </p>
+      </div>
+    </div>
+
+    <!-- MENU-OPEN -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar__inner">
+        <button href="#" class="closebtn" id="closeBtn">
+          <img src="img/icon-close.svg" alt="icon close" />
+        </button>
+        <a class="sidebar__link" href="page.html">Главная</a>
+        <a class="sidebar__link" href="page.html">Информация о тесте</a>
+        <a class="sidebar__link" href="index.html">пройти тест</a>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
